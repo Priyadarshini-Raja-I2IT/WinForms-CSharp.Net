@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.addNewTraineeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.traineesListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddNewTraineeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TraineesListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -39,34 +39,34 @@
             this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addNewTraineeToolStripMenuItem,
-            this.traineesListToolStripMenuItem});
+            this.AddNewTraineeToolStripMenuItem,
+            this.TraineesListToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1478, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1924, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // addNewTraineeToolStripMenuItem
+            // AddNewTraineeToolStripMenuItem
             // 
-            this.addNewTraineeToolStripMenuItem.Name = "addNewTraineeToolStripMenuItem";
-            this.addNewTraineeToolStripMenuItem.Size = new System.Drawing.Size(161, 29);
-            this.addNewTraineeToolStripMenuItem.Text = "Add New Trainee";
-            this.addNewTraineeToolStripMenuItem.Click += new System.EventHandler(this.addNewTraineeToolStripMenuItem_Click);
+            this.AddNewTraineeToolStripMenuItem.Name = "AddNewTraineeToolStripMenuItem";
+            this.AddNewTraineeToolStripMenuItem.Size = new System.Drawing.Size(161, 29);
+            this.AddNewTraineeToolStripMenuItem.Text = "Add New Trainee";
+            this.AddNewTraineeToolStripMenuItem.Click += new System.EventHandler(this.AddNewTraineeToolStripMenuItem_Click);
             // 
-            // traineesListToolStripMenuItem
+            // TraineesListToolStripMenuItem
             // 
-            this.traineesListToolStripMenuItem.Name = "traineesListToolStripMenuItem";
-            this.traineesListToolStripMenuItem.Size = new System.Drawing.Size(121, 29);
-            this.traineesListToolStripMenuItem.Text = "Trainees List";
-            this.traineesListToolStripMenuItem.Click += new System.EventHandler(this.traineesListToolStripMenuItem_Click);
+            this.TraineesListToolStripMenuItem.Name = "TraineesListToolStripMenuItem";
+            this.TraineesListToolStripMenuItem.Size = new System.Drawing.Size(121, 29);
+            this.TraineesListToolStripMenuItem.Text = "Trainees List";
+            this.TraineesListToolStripMenuItem.Click += new System.EventHandler(this.TraineesListToolStripMenuItem_Click);
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1478, 944);
+            this.ClientSize = new System.Drawing.Size(1924, 1050);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -84,8 +84,8 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem addNewTraineeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem traineesListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AddNewTraineeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem TraineesListToolStripMenuItem;
     }
 }
 

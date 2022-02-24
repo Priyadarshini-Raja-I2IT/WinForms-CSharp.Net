@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Trainees_Management_System
@@ -17,8 +11,8 @@ namespace Trainees_Management_System
             InitializeComponent();
         }
 
-        private TraineesList _traineesList = new TraineesList();
-        List<Trainee> trainees = new List<Trainee>();
+        private readonly TraineesList _traineesList = new TraineesList();
+        BindingList<Trainee> trainees = new BindingList<Trainee>();
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -28,7 +22,7 @@ namespace Trainees_Management_System
             DateTime dateOfBirth = this.DOBDatePicker.Value.Date;
             string qualification = DegreesList.SelectedItem.ToString();
 
-            trainees = _traineesList.addTrainee(new Trainee(name, mobileNumber, address, dateOfBirth, qualification));
+            trainees = _traineesList.AddTrainee(new Trainee(name, mobileNumber, address, dateOfBirth, qualification));
 
             if(trainees != null)
             {

@@ -10,18 +10,26 @@ namespace Trainees_Management_System
             InitializeComponent();
         }
 
-        TraineeForm traineeForm;
-        private void addNewTraineeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AddNewTraineeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (traineeForm == null)
+            bool IsOpen = false;
+
+            foreach (Form form in Application.OpenForms)
             {
-                traineeForm = new TraineeForm();
-                traineeForm.MdiParent = this;
-                traineeForm.Show();
+                if (form.Text == "TraineeForm")
+                {
+                    IsOpen = true;
+                    form.Focus();
+                    break;
+                }
             }
-            else
+            if (IsOpen == false)
             {
-                MessageBox.Show("You've already opened trainees form!");
+                TraineeForm traineeForm = new TraineeForm
+                {
+                    MdiParent = this
+                };
+                traineeForm.Show();
             }
         }
 
@@ -29,8 +37,7 @@ namespace Trainees_Management_System
         {
             foreach (Control control in this.Controls)
             {
-                MdiClient client = control as MdiClient;
-                if (client != null)
+                if (control is MdiClient client)
                 {
                     client.BackColor = this.BackColor;
                     break;
@@ -39,11 +46,28 @@ namespace Trainees_Management_System
         }
 
         TraineesListGrid traineesListGrid;
-        private void traineesListToolStripMenuItem_Click(object sender, EventArgs e)
+        private void TraineesListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-                traineesListGrid = new TraineesListGrid();
-                traineesListGrid.MdiParent = this;
-                traineesListGrid.ShowDialog();            
+            bool IsOpen = false;
+
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.Text == "TraineesListGrid")
+                {
+                    IsOpen = true;
+                    form.Focus();
+                    break;
+                }
+            }
+
+            if (IsOpen == false)
+            {
+                traineesListGrid = new TraineesListGrid
+                {
+                    MdiParent = this
+                };
+                traineesListGrid.Show();
+            }
         }
     }
 }
