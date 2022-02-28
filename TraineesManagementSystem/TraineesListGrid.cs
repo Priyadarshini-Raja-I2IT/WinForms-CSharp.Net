@@ -23,43 +23,35 @@ namespace Trainees_Management_System
         private void LoadGridView()
         {
             traineesGrid.DataSource = _trainees;
-
-            traineesGrid.Columns[0].HeaderText = "Name";
-            traineesGrid.Columns[1].HeaderText = "Mobile_Number";
-            traineesGrid.Columns[2].HeaderText = "Address";
-            traineesGrid.Columns[3].HeaderText = "Date_Of_Birth";
-            traineesGrid.Columns[4].HeaderText = "Qualifications";
         }
 
-        private void DeleteButton_Click(object sender, EventArgs e)
+        private void traineesGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int selectedRow = traineesGrid.CurrentCell.RowIndex;
-            string traineeName = (string)traineesGrid.Rows[selectedRow].Cells[0].Value;
-            foreach(Trainee trainee in _trainees.ToList())
+
+            if (traineesGrid.Columns[e.ColumnIndex].Name == "Delete")
             {
-                if(trainee.Name == traineeName)
-                    _trainees.Remove(trainee);
+                if(MessageBox.Show("Are you sure want to delete this record?","Message",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    _trainees.RemoveAt(selectedRow);
+                }
             }
-                
-        }
 
-        private void UpdateButton_Click(object sender, EventArgs e)
-        {
-            TraineeForm fr = new TraineeForm();
-            int row = traineesGrid.CurrentRow.Index;
-            fr.Shown += (senderfr, efr) =>
+            if (traineesGrid.Columns[e.ColumnIndex].Name == "Update")
             {
-                // I did null check because I used the same form as Form2 :) 
-                // You can probably omit this check.
-                if (fr.Owner == null) return;
-
-                var ownerForm = fr.Owner as TraineesListGrid;
-                fr.Name = ownerForm.traineesGrid[0, row].Value.ToString();
-            };
-            fr.Show(this);
-
+                int id = Convert.ToInt32(traineesGrid.CurrentRow.Cells[0].Value);
+                Trainee traineeToUpdate = _trainees.FirstOrDefault(trainee => trainee.Id == id);
+                TraineeForm traineeForm = new TraineeForm(traineeToUpdate)
+                {
+                    MdiParent = MdiParent
+                };
+                traineeForm.Show();
+            }
         }
 
-       
+        private void traineesGrid_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            traineesGrid.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex+1).ToString();
+        }
     }
 }

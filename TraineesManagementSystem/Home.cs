@@ -27,7 +27,8 @@ namespace Trainees_Management_System
             {
                 TraineeForm traineeForm = new TraineeForm
                 {
-                    MdiParent = this
+                    MdiParent = this,
+                    Size = this.Size
                 };
                 traineeForm.Show();
             }

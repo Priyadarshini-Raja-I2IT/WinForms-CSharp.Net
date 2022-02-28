@@ -17,6 +17,8 @@ namespace Trainees_Management_System
             Qualification = qualification;
         }
 
+        public int Id { get; set; }
+
         public string Name { get; set; }
 
         public long MobileNumber { get; set; }

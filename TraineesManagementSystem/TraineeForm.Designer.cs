@@ -35,13 +35,14 @@
             this.AddressTxtBox = new System.Windows.Forms.TextBox();
             this.DOBDatePicker = new System.Windows.Forms.DateTimePicker();
             this.DegreesList = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.inputValidation = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblTraineeFormTitle = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblId = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.inputValidation)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,6 +93,7 @@
             // 
             // DegreesList
             // 
+            this.DegreesList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DegreesList.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DegreesList.FormattingEnabled = true;
             this.DegreesList.Items.AddRange(new object[] {
@@ -110,33 +112,33 @@
             this.DegreesList.Size = new System.Drawing.Size(245, 33);
             this.DegreesList.TabIndex = 11;
             // 
-            // button1
+            // btnSave
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Navy;
-            this.button1.Location = new System.Drawing.Point(494, 514);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 42);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.Black;
+            this.btnSave.Location = new System.Drawing.Point(494, 514);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(211, 42);
+            this.btnSave.TabIndex = 12;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // inputValidation
             // 
             this.inputValidation.ContainerControl = this;
             // 
-            // label6
+            // lblTraineeFormTitle
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label6.Font = new System.Drawing.Font("Palatino Linotype", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(435, 9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(270, 55);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Trainee Form";
+            this.lblTraineeFormTitle.AutoSize = true;
+            this.lblTraineeFormTitle.BackColor = System.Drawing.Color.Silver;
+            this.lblTraineeFormTitle.Font = new System.Drawing.Font("Palatino Linotype", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTraineeFormTitle.Location = new System.Drawing.Point(435, 9);
+            this.lblTraineeFormTitle.Name = "lblTraineeFormTitle";
+            this.lblTraineeFormTitle.Size = new System.Drawing.Size(270, 55);
+            this.lblTraineeFormTitle.TabIndex = 13;
+            this.lblTraineeFormTitle.Text = "Trainee Form";
             // 
             // label5
             // 
@@ -178,14 +180,24 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Mobile Number";
             // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(622, 78);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(0, 20);
+            this.lblId.TabIndex = 14;
+            this.lblId.Visible = false;
+            // 
             // TraineeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1228, 594);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lblId);
+            this.Controls.Add(this.lblTraineeFormTitle);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.DegreesList);
             this.Controls.Add(this.DOBDatePicker);
             this.Controls.Add(this.AddressTxtBox);
@@ -213,12 +225,13 @@
         private System.Windows.Forms.TextBox AddressTxtBox;
         private System.Windows.Forms.DateTimePicker DOBDatePicker;
         private System.Windows.Forms.ComboBox DegreesList;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.ErrorProvider inputValidation;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblTraineeFormTitle;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblId;
     }
 }
