@@ -36,6 +36,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -43,30 +44,34 @@
             this.TraineesListToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1924, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1154, 38);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // AddNewTraineeToolStripMenuItem
             // 
+            this.AddNewTraineeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddNewTraineeToolStripMenuItem.ForeColor = System.Drawing.Color.MidnightBlue;
             this.AddNewTraineeToolStripMenuItem.Name = "AddNewTraineeToolStripMenuItem";
-            this.AddNewTraineeToolStripMenuItem.Size = new System.Drawing.Size(161, 29);
+            this.AddNewTraineeToolStripMenuItem.Size = new System.Drawing.Size(183, 32);
             this.AddNewTraineeToolStripMenuItem.Text = "Add New Trainee";
             this.AddNewTraineeToolStripMenuItem.Click += new System.EventHandler(this.AddNewTraineeToolStripMenuItem_Click);
             // 
             // TraineesListToolStripMenuItem
             // 
+            this.TraineesListToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TraineesListToolStripMenuItem.ForeColor = System.Drawing.Color.MidnightBlue;
             this.TraineesListToolStripMenuItem.Name = "TraineesListToolStripMenuItem";
-            this.TraineesListToolStripMenuItem.Size = new System.Drawing.Size(121, 29);
+            this.TraineesListToolStripMenuItem.Size = new System.Drawing.Size(139, 32);
             this.TraineesListToolStripMenuItem.Text = "Trainees List";
             this.TraineesListToolStripMenuItem.Click += new System.EventHandler(this.TraineesListToolStripMenuItem_Click);
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1924, 1050);
+            this.ClientSize = new System.Drawing.Size(1154, 724);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;

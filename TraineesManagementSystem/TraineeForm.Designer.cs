@@ -84,12 +84,13 @@
             // 
             // DOBDatePicker
             // 
+            this.DOBDatePicker.CustomFormat = "";
             this.DOBDatePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DOBDatePicker.Location = new System.Drawing.Point(626, 374);
             this.DOBDatePicker.Name = "DOBDatePicker";
             this.DOBDatePicker.Size = new System.Drawing.Size(245, 30);
             this.DOBDatePicker.TabIndex = 10;
-            this.DOBDatePicker.Value = new System.DateTime(2022, 2, 23, 15, 36, 39, 0);
+            this.DOBDatePicker.Value = new System.DateTime(2022, 3, 1, 23, 2, 6, 0);
             // 
             // DegreesList
             // 
@@ -191,8 +192,8 @@
             // 
             // TraineeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1228, 594);
             this.Controls.Add(this.lblId);

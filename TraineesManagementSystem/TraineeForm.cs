@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Windows.Forms;
 
 namespace Trainees_Management_System
@@ -49,9 +51,7 @@ namespace Trainees_Management_System
 
                 if(null != _traineesList.EditTrainee(id, name, mobileNumber, address, dateOfBirth, qualification))
                     MessageBox.Show($"Details of trainee {id} updated successfully");
-                Close();
-
-                
+                Close();                
             } else
             {
                 Trainee trainee = new Trainee
@@ -61,7 +61,7 @@ namespace Trainees_Management_System
                     Address = AddressTxtBox.Text,
                     DateOfBirth = this.DOBDatePicker.Value.Date,
                     Qualification = DegreesList.SelectedItem.ToString()
-                };                
+                };
 
                 if (_traineesList.AddTrainee(trainee) != null)
                 {
@@ -77,7 +77,9 @@ namespace Trainees_Management_System
             MobileNumberTxtBox.Clear();
             AddressTxtBox.Clear();
             DOBDatePicker.Text = "";
-            DegreesList.Text = "";
+            //DOBDatePicker.Format = DateTimePickerFormat.Custom;
+            //DOBDatePicker.CustomFormat = " ";
+            DegreesList.SelectedIndex = -1;
         }
 
         private void txtBoxValidation(object sender, CancelEventArgs e)

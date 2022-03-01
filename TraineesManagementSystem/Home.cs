@@ -28,7 +28,7 @@ namespace Trainees_Management_System
                 TraineeForm traineeForm = new TraineeForm
                 {
                     MdiParent = this,
-                    Size = this.Size
+                    Dock = DockStyle.Fill
                 };
                 traineeForm.Show();
             }
@@ -57,6 +57,7 @@ namespace Trainees_Management_System
                 {
                     IsOpen = true;
                     form.Focus();
+                    form.Refresh();
                     break;
                 }
             }
@@ -65,9 +66,11 @@ namespace Trainees_Management_System
             {
                 traineesListGrid = new TraineesListGrid
                 {
-                    MdiParent = this
+                    MdiParent = this,
+                    Dock = DockStyle.Fill
                 };
                 traineesListGrid.Show();
+                traineesListGrid.Update();
             }
         }
     }

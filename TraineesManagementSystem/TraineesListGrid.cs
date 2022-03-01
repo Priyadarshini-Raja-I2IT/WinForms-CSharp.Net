@@ -43,7 +43,8 @@ namespace Trainees_Management_System
                 Trainee traineeToUpdate = _trainees.FirstOrDefault(trainee => trainee.Id == id);
                 TraineeForm traineeForm = new TraineeForm(traineeToUpdate)
                 {
-                    MdiParent = MdiParent
+                    MdiParent = MdiParent,
+                    Dock = DockStyle.Fill
                 };
                 traineeForm.Show();
             }

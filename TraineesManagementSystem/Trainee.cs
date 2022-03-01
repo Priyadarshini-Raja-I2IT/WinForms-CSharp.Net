@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Trainees_Management_System
 {
@@ -8,25 +9,15 @@ namespace Trainees_Management_System
         {
         }
 
-        public Trainee(string name, long mobileNumber, string address, DateTime dateOfBirth, string qualification)
-        {
-            Name = name;
-            MobileNumber = mobileNumber;
-            Address = address;
-            DateOfBirth = dateOfBirth;
-            Qualification = qualification;
-        }
-
         public int Id { get; set; }
-
+        [Required]
         public string Name { get; set; }
-
+        [Required]
         public long MobileNumber { get; set; }
 
         public string Address { get; set; }
-
         public DateTime DateOfBirth { get; set; }
-
+        [Required]
         public string Qualification { get; set; }
     }
 }
