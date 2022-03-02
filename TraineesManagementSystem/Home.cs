@@ -57,7 +57,7 @@ namespace Trainees_Management_System
                 {
                     IsOpen = true;
                     form.Focus();
-                    form.Refresh();
+                    form.Update();
                     break;
                 }
             }

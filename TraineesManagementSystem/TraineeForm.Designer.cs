@@ -36,14 +36,14 @@
             this.DOBDatePicker = new System.Windows.Forms.DateTimePicker();
             this.DegreesList = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.inputValidation = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblTraineeFormTitle = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.inputValidation)).BeginInit();
+            this.InputValidation = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.InputValidation)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -63,7 +63,7 @@
             this.NameTxtBox.Name = "NameTxtBox";
             this.NameTxtBox.Size = new System.Drawing.Size(245, 30);
             this.NameTxtBox.TabIndex = 5;
-            this.NameTxtBox.Validating += new System.ComponentModel.CancelEventHandler(this.txtBoxValidation);
+            this.NameTxtBox.Validating += new System.ComponentModel.CancelEventHandler(this.NameValidation);
             // 
             // MobileNumberTxtBox
             // 
@@ -72,6 +72,7 @@
             this.MobileNumberTxtBox.Name = "MobileNumberTxtBox";
             this.MobileNumberTxtBox.Size = new System.Drawing.Size(245, 30);
             this.MobileNumberTxtBox.TabIndex = 6;
+            this.MobileNumberTxtBox.Validating += new System.ComponentModel.CancelEventHandler(this.MobileNumberValidation);
             // 
             // AddressTxtBox
             // 
@@ -91,6 +92,7 @@
             this.DOBDatePicker.Size = new System.Drawing.Size(245, 30);
             this.DOBDatePicker.TabIndex = 10;
             this.DOBDatePicker.Value = new System.DateTime(2022, 3, 1, 23, 2, 6, 0);
+            this.DOBDatePicker.Validating += new System.ComponentModel.CancelEventHandler(this.DOBValidation);
             // 
             // DegreesList
             // 
@@ -112,6 +114,7 @@
             this.DegreesList.Name = "DegreesList";
             this.DegreesList.Size = new System.Drawing.Size(245, 33);
             this.DegreesList.TabIndex = 11;
+            this.DegreesList.Validating += new System.ComponentModel.CancelEventHandler(this.QualificationValidation);
             // 
             // btnSave
             // 
@@ -125,10 +128,6 @@
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // inputValidation
-            // 
-            this.inputValidation.ContainerControl = this;
             // 
             // lblTraineeFormTitle
             // 
@@ -190,6 +189,10 @@
             this.lblId.TabIndex = 14;
             this.lblId.Visible = false;
             // 
+            // InputValidation
+            // 
+            this.InputValidation.ContainerControl = this;
+            // 
             // TraineeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -212,7 +215,7 @@
             this.Name = "TraineeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "TraineeForm";
-            ((System.ComponentModel.ISupportInitialize)(this.inputValidation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InputValidation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,12 +230,12 @@
         private System.Windows.Forms.DateTimePicker DOBDatePicker;
         private System.Windows.Forms.ComboBox DegreesList;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.ErrorProvider inputValidation;
         private System.Windows.Forms.Label lblTraineeFormTitle;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.ErrorProvider InputValidation;
     }
 }

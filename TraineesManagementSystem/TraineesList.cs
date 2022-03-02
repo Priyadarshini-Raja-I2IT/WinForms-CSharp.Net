@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace Trainees_Management_System
 {
-  
+
     internal class TraineesList
     {
         private static BindingList<Trainee> trainees = new BindingList<Trainee>();
@@ -11,7 +11,7 @@ namespace Trainees_Management_System
 
         public Trainee AddTrainee(Trainee trainee)
         {
-            Trainees.Add(trainee);            
+            Trainees.Add(trainee);
             return trainee;
         }
 

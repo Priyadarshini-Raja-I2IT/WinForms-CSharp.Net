@@ -1,29 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Trainees_Management_System
 {
     public partial class TraineeForm : Form
     {
         private readonly TraineesList _traineesList = new TraineesList();
-        BindingList<Trainee> trainees = new BindingList<Trainee>();
-        private bool isEditable;
+        private bool IsEditable;
 
         public TraineeForm()
         {
             InitializeComponent();
             lblTraineeFormTitle.Text = "Add new trainee";
-            isEditable = false;
+            IsEditable = false;
         }
 
         internal TraineeForm(Trainee trainee)
         {
             InitializeComponent();
             lblTraineeFormTitle.Text = "Edit trainee details";
-            isEditable = true;
+            IsEditable = true;
             getDataToFormFields(trainee);
             btnSave.Text = "Save Changes";
         }
@@ -33,43 +31,47 @@ namespace Trainees_Management_System
             lblId.Text = trainee.Id.ToString();
             NameTxtBox.Text = trainee.Name;
             MobileNumberTxtBox.Text = trainee.MobileNumber.ToString();
-            AddressTxtBox.Text= trainee.Address;
+            AddressTxtBox.Text = trainee.Address;
             DOBDatePicker.Text = trainee.DateOfBirth.ToString();
             DegreesList.SelectedItem = trainee.Qualification;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if(isEditable)
+            if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                int id = int.Parse(lblId.Text);
-                string name = NameTxtBox.Text;
-                long mobileNumber = long.Parse(MobileNumberTxtBox.Text);
-                string address = AddressTxtBox.Text;
-                DateTime dateOfBirth = this.DOBDatePicker.Value.Date;
-                string qualification = DegreesList.SelectedItem.ToString();
-
-                if(null != _traineesList.EditTrainee(id, name, mobileNumber, address, dateOfBirth, qualification))
-                    MessageBox.Show($"Details of trainee {id} updated successfully");
-                Close();                
-            } else
-            {
-                Trainee trainee = new Trainee
+                if (IsEditable)
                 {
-                    Name = NameTxtBox.Text,
-                    MobileNumber = Convert.ToInt64(MobileNumberTxtBox.Text),
-                    Address = AddressTxtBox.Text,
-                    DateOfBirth = this.DOBDatePicker.Value.Date,
-                    Qualification = DegreesList.SelectedItem.ToString()
-                };
+                    int id = int.Parse(lblId.Text);
+                    string name = NameTxtBox.Text;
+                    long mobileNumber = long.Parse(MobileNumberTxtBox.Text);
+                    string address = AddressTxtBox.Text;
+                    DateTime dateOfBirth = this.DOBDatePicker.Value.Date;
+                    string qualification = DegreesList.SelectedItem.ToString();
 
-                if (_traineesList.AddTrainee(trainee) != null)
-                {
-                    MessageBox.Show("New Trainee added successfully");
-                    clearForm();
+                    if (null != _traineesList.EditTrainee(id, name, mobileNumber, address, dateOfBirth, qualification))
+                        MessageBox.Show($"Details of trainee {id} updated successfully");
+                    Close();
                 }
-            }            
-        }
+                else
+                {
+                    Trainee trainee = new Trainee
+                    {
+                        Name = NameTxtBox.Text,
+                        MobileNumber = Convert.ToInt64(MobileNumberTxtBox.Text),
+                        Address = AddressTxtBox.Text,
+                        DateOfBirth = this.DOBDatePicker.Value.Date,
+                        Qualification = DegreesList.SelectedItem.ToString()
+                    };
+
+                    if (_traineesList.AddTrainee(trainee) != null)
+                    {
+                        MessageBox.Show("New Trainee added successfully");
+                        clearForm();
+                    }
+                }
+            }                
+        }        
 
         private void clearForm()
         {
@@ -77,26 +79,77 @@ namespace Trainees_Management_System
             MobileNumberTxtBox.Clear();
             AddressTxtBox.Clear();
             DOBDatePicker.Text = "";
-            //DOBDatePicker.Format = DateTimePickerFormat.Custom;
-            //DOBDatePicker.CustomFormat = " ";
             DegreesList.SelectedIndex = -1;
         }
 
-        private void txtBoxValidation(object sender, CancelEventArgs e)
+        private void NameValidation(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(NameTxtBox.Text))
             {
                 e.Cancel = true;
                 NameTxtBox.Focus();
-                inputValidation.SetError(NameTxtBox, "Name should not be left blank!");
+                InputValidation.SetError(NameTxtBox, "Name should not be left blank!");
+            }
+            else if (!Regex.IsMatch(NameTxtBox.Text, @"^([a-zA-Z ]+)$"))
+            {
+                e.Cancel = true;
+                NameTxtBox.Focus();
+                InputValidation.SetError(NameTxtBox, "Name should not contain special characters or numbers!");
             }
             else
             {
                 e.Cancel = false;
-                inputValidation.SetError(NameTxtBox, "");
+                InputValidation.SetError(NameTxtBox, "");
             }
         }
 
-        
+        private void MobileNumberValidation(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(MobileNumberTxtBox.Text))
+            {
+                e.Cancel = true;
+                MobileNumberTxtBox.Focus();
+                InputValidation.SetError(MobileNumberTxtBox, "Mobile number should not be left blank!");
+            }
+            else if (!Regex.IsMatch(MobileNumberTxtBox.Text, @"^((91)?[0]?[6-9][0-9]{9})$"))
+            {
+                e.Cancel = true;
+                MobileNumberTxtBox.Focus();
+                InputValidation.SetError(MobileNumberTxtBox, "Mobile number should contain 10 digits!");
+            }
+            else
+            {
+                e.Cancel = false;
+                InputValidation.SetError(MobileNumberTxtBox, "");
+            }
+        }
+
+        private void DOBValidation(object sender, CancelEventArgs e)
+        {
+            int age = DateTime.Now.Year - DOBDatePicker.Value.Year;
+            if (DateTime.Now.DayOfYear < DOBDatePicker.Value.DayOfYear)
+                age--;
+            if(age < 18)
+            {
+                e.Cancel = true;
+                DOBDatePicker.Focus();
+                InputValidation.SetError(DOBDatePicker, "Age should be greater than 18!");
+            }
+        }
+
+        private void QualificationValidation(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(DegreesList.Text))
+            {
+                e.Cancel = true;
+                DegreesList.Focus();
+                InputValidation.SetError(DegreesList, "You should select any one degree from the list!");
+            }
+            else
+            {
+                e.Cancel = false;
+                InputValidation.SetError(DegreesList, "");
+            }
+        }
     }
 }

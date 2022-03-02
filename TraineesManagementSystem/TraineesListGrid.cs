@@ -27,13 +27,14 @@ namespace Trainees_Management_System
 
         private void traineesGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int selectedRow = traineesGrid.CurrentCell.RowIndex;
 
             if (traineesGrid.Columns[e.ColumnIndex].Name == "Delete")
             {
-                if(MessageBox.Show("Are you sure want to delete this record?","Message",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                int id = Convert.ToInt32(traineesGrid.CurrentRow.Cells[0].Value);
+                Trainee traineeToDelete = _trainees.FirstOrDefault(trainee => trainee.Id == id);
+                if (MessageBox.Show("Are you sure want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    _trainees.RemoveAt(selectedRow);
+                    _trainees.Remove(traineeToDelete);
                 }
             }
 
@@ -52,7 +53,7 @@ namespace Trainees_Management_System
 
         private void traineesGrid_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            traineesGrid.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex+1).ToString();
+            traineesGrid.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
         }
     }
 }
