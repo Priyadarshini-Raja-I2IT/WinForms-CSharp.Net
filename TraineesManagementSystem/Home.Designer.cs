@@ -1,4 +1,4 @@
-﻿namespace Trainees_Management_System
+﻿namespace TraineesManagement.windows
 {
     partial class Home
     {
@@ -53,7 +53,7 @@
             this.AddNewTraineeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddNewTraineeToolStripMenuItem.ForeColor = System.Drawing.Color.MidnightBlue;
             this.AddNewTraineeToolStripMenuItem.Name = "AddNewTraineeToolStripMenuItem";
-            this.AddNewTraineeToolStripMenuItem.Size = new System.Drawing.Size(183, 32);
+            this.AddNewTraineeToolStripMenuItem.Size = new System.Drawing.Size(183, 34);
             this.AddNewTraineeToolStripMenuItem.Text = "Add New Trainee";
             this.AddNewTraineeToolStripMenuItem.Click += new System.EventHandler(this.AddNewTraineeToolStripMenuItem_Click);
             // 
@@ -62,14 +62,14 @@
             this.TraineesListToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TraineesListToolStripMenuItem.ForeColor = System.Drawing.Color.MidnightBlue;
             this.TraineesListToolStripMenuItem.Name = "TraineesListToolStripMenuItem";
-            this.TraineesListToolStripMenuItem.Size = new System.Drawing.Size(139, 32);
+            this.TraineesListToolStripMenuItem.Size = new System.Drawing.Size(139, 34);
             this.TraineesListToolStripMenuItem.Text = "Trainees List";
             this.TraineesListToolStripMenuItem.Click += new System.EventHandler(this.TraineesListToolStripMenuItem_Click);
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1154, 724);
             this.Controls.Add(this.menuStrip1);

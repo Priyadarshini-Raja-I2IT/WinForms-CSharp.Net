@@ -3,11 +3,16 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
-namespace Trainees_Management_System
+using TraineesManagement.model;
+using TraineesManagement.Data;
+
+namespace TraineesManagement.windows
 {
     public partial class TraineeForm : Form
     {
-        private readonly TraineesList _traineesList = new TraineesList();
+        TraineesDBManager traineesDBManager = new TraineesDBManager();
+        TraineesListGrid gridView = new TraineesListGrid();
+
         private bool IsEditable;
 
         public TraineeForm()
@@ -44,13 +49,13 @@ namespace Trainees_Management_System
                 {
                     int id = int.Parse(lblId.Text);
                     string name = NameTxtBox.Text;
-                    long mobileNumber = long.Parse(MobileNumberTxtBox.Text);
+                    string mobileNumber = MobileNumberTxtBox.Text;
                     string address = AddressTxtBox.Text;
                     DateTime dateOfBirth = this.DOBDatePicker.Value.Date;
-                    string qualification = DegreesList.SelectedItem.ToString();
+                    string qualification = DegreesList.SelectedItem.ToString();                    
 
-                    if (null != _traineesList.EditTrainee(id, name, mobileNumber, address, dateOfBirth, qualification))
-                        MessageBox.Show($"Details of trainee {id} updated successfully");
+                    if (0 < traineesDBManager.UpdateTrainee(id, name, mobileNumber, dateOfBirth, qualification, address))
+                        MessageBox.Show($"Trainee {id} updated successfully!");
                     Close();
                 }
                 else
@@ -58,22 +63,21 @@ namespace Trainees_Management_System
                     Trainee trainee = new Trainee
                     {
                         Name = NameTxtBox.Text,
-                        MobileNumber = Convert.ToInt64(MobileNumberTxtBox.Text),
+                        MobileNumber = long.Parse(MobileNumberTxtBox.Text),
                         Address = AddressTxtBox.Text,
                         DateOfBirth = this.DOBDatePicker.Value.Date,
                         Qualification = DegreesList.SelectedItem.ToString()
                     };
 
-                    if (_traineesList.AddTrainee(trainee) != null)
-                    {
-                        MessageBox.Show("New Trainee added successfully");
-                        clearForm();
-                    }
+                    if (0 < traineesDBManager.InsertTrainee(trainee))
+                        MessageBox.Show("New Trainee created successfully!");
+                    
+                    clearForm();                    
                 }
-            }                
-        }        
+            }
+        }
 
-        private void clearForm()
+    private void clearForm()
         {
             NameTxtBox.Clear();
             MobileNumberTxtBox.Clear();

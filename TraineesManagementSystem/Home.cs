@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Trainees_Management_System
+namespace TraineesManagement.windows
 {
     public partial class Home : Form
     {

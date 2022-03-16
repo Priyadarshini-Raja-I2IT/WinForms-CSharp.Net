@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trainees Management System", "Trainees Management System.csproj", "{9109825C-9DD5-4E64-989B-66B7583CD0EC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraineesManagement.window", "TraineesManagement.window.csproj", "{9109825C-9DD5-4E64-989B-66B7583CD0EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraineesManagement.model", "..\TraineesManagement.model\TraineesManagement.model.csproj", "{A9DCCA10-BAB7-4220-8069-F4DA20FCDF2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraineesManagement.Data", "..\TraineesManagement.Data\TraineesManagement.Data.csproj", "{FC736D4B-AD6D-455F-8B95-1AF0711E2503}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{9109825C-9DD5-4E64-989B-66B7583CD0EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9109825C-9DD5-4E64-989B-66B7583CD0EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9109825C-9DD5-4E64-989B-66B7583CD0EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9DCCA10-BAB7-4220-8069-F4DA20FCDF2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9DCCA10-BAB7-4220-8069-F4DA20FCDF2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9DCCA10-BAB7-4220-8069-F4DA20FCDF2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9DCCA10-BAB7-4220-8069-F4DA20FCDF2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC736D4B-AD6D-455F-8B95-1AF0711E2503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC736D4B-AD6D-455F-8B95-1AF0711E2503}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC736D4B-AD6D-455F-8B95-1AF0711E2503}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC736D4B-AD6D-455F-8B95-1AF0711E2503}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

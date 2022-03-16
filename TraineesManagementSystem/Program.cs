@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
-namespace Trainees_Management_System
+namespace TraineesManagement.windows
 {
     internal static class Program
     {

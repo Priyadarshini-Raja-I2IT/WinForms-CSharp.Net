@@ -3,9 +3,14 @@
   "ProjectMap": {
     "9109825c-9dd5-4e64-989b-66b7583cd0ec": {
       "ProjectGuid": "9109825c-9dd5-4e64-989b-66b7583cd0ec",
-      "DisplayName": "Trainees Management System",
+      "DisplayName": "TraineesManagementDB",
       "ColorIndex": 0
+    },
+    "7f7cd92d-ba35-4a36-a5cd-15727aabc5c7": {
+      "ProjectGuid": "7f7cd92d-ba35-4a36-a5cd-15727aabc5c7",
+      "DisplayName": "Trainees Management System",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }

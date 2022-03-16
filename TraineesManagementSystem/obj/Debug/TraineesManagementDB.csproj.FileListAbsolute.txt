@@ -1,0 +1,18 @@
+C:\Users\Lenovo\Documents\TraineesManagementSystem\Trainees Management System\TraineesManagementSystem\obj\Debug\TraineesManagementDB.csproj.AssemblyReference.cache
+C:\Users\Lenovo\Documents\TraineesManagementSystem\Trainees Management System\TraineesManagementSystem\obj\Debug\TraineesManagementDB.csproj.SuggestedBindingRedirects.cache
+C:\Users\Lenovo\Documents\TraineesManagementSystem\Trainees Management System\TraineesManagementSystem\obj\Debug\Trainees_Management_System.Home.resources
+C:\Users\Lenovo\Documents\TraineesManagementSystem\Trainees Management System\TraineesManagementSystem\obj\Debug\Trainees_Management_System.Properties.Resources.resources
+C:\Users\Lenovo\Documents\TraineesManagementSystem\Trainees Management System\TraineesManagementSystem\obj\Debug\Trainees_Management_System.TraineeForm.resources
+C:\Users\Lenovo\Documents\TraineesManagementSystem\Trainees Management System\TraineesManagementSystem\obj\Debug\Trainees_Management_System.TraineesListGrid.resources
+C:\Users\Lenovo\Documents\TraineesManagementSystem\Trainees Management System\TraineesManagementSystem\obj\Debug\TraineesManagementDB.csproj.GenerateResource.cache
+C:\Users\Lenovo\Documents\TraineesManagementSystem\Trainees Management System\TraineesManagementSystem\obj\Debug\TraineesManagementDB.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Documents\TraineesManagementSystem\Trainees Management System\TraineesManagementSystem\obj\Debug\Trainees Management System.exe
+C:\Users\Lenovo\Documents\TraineesManagementSystem\Trainees Management System\TraineesManagementSystem\obj\Debug\Trainees Management System.pdb
+C:\Users\Lenovo\Documents\TraineesManagementSystem\Trainees Management System\TraineesManagementSystem\bin\Debug\Trainees Management System.exe.config
+C:\Users\Lenovo\Documents\TraineesManagementSystem\Trainees Management System\TraineesManagementSystem\bin\Debug\Trainees Management System.exe
+C:\Users\Lenovo\Documents\TraineesManagementSystem\Trainees Management System\TraineesManagementSystem\bin\Debug\Trainees Management System.pdb
+C:\Users\Lenovo\Documents\TraineesManagementSystem\Trainees Management System\TraineesManagementSystem\bin\Debug\EntityFramework.dll
+C:\Users\Lenovo\Documents\TraineesManagementSystem\Trainees Management System\TraineesManagementSystem\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Lenovo\Documents\TraineesManagementSystem\Trainees Management System\TraineesManagementSystem\bin\Debug\EntityFramework.xml
+C:\Users\Lenovo\Documents\TraineesManagementSystem\Trainees Management System\TraineesManagementSystem\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Lenovo\Documents\TraineesManagementSystem\Trainees Management System\TraineesManagementSystem\obj\Debug\TraineesManagementDB.csproj.CopyComplete

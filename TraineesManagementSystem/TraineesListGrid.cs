@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Trainees_Management_System
+using TraineesManagement.Data;
+using TraineesManagement.model;
+
+namespace TraineesManagement.windows
 {
     public partial class TraineesListGrid : Form
     {
-        private readonly BindingList<Trainee> _trainees = new TraineesList().GetAllTrainees();
+        TraineesDBManager traineesDBManager = new TraineesDBManager();
 
         public TraineesListGrid()
         {
@@ -20,9 +16,9 @@ namespace Trainees_Management_System
             LoadGridView();
         }
 
-        private void LoadGridView()
+        public void LoadGridView()
         {
-            traineesGrid.DataSource = _trainees;
+            traineesGrid.DataSource = traineesDBManager.GetAllTrainees();
         }
 
         private void traineesGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -31,29 +27,27 @@ namespace Trainees_Management_System
             if (traineesGrid.Columns[e.ColumnIndex].Name == "Delete")
             {
                 int id = Convert.ToInt32(traineesGrid.CurrentRow.Cells[0].Value);
-                Trainee traineeToDelete = _trainees.FirstOrDefault(trainee => trainee.Id == id);
+
                 if (MessageBox.Show("Are you sure want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    _trainees.Remove(traineeToDelete);
+                    if (0 < traineesDBManager.DeleteTrainee(id))
+                        MessageBox.Show($"Trainee {id} deleted successfully!");
+                    LoadGridView();
                 }
             }
 
             if (traineesGrid.Columns[e.ColumnIndex].Name == "Update")
             {
                 int id = Convert.ToInt32(traineesGrid.CurrentRow.Cells[0].Value);
-                Trainee traineeToUpdate = _trainees.FirstOrDefault(trainee => trainee.Id == id);
+                Trainee traineeToUpdate = traineesDBManager.GetTraineeById(id);
                 TraineeForm traineeForm = new TraineeForm(traineeToUpdate)
                 {
                     MdiParent = MdiParent,
                     Dock = DockStyle.Fill
                 };
                 traineeForm.Show();
+                this.Close();
             }
-        }
-
-        private void traineesGrid_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            traineesGrid.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
         }
     }
 }

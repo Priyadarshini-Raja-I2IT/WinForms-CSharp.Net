@@ -1,4 +1,4 @@
-﻿namespace Trainees_Management_System
+﻿namespace TraineesManagement.windows
 {
     partial class TraineesListGrid
     {
@@ -30,25 +30,29 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.traineesGrid = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
+            this.traineeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.freshersDataSet = new TraineesManagement.windows.FreshersDataSet();
             this.traineeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Update = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.traineeTableAdapter = new TraineesManagement.windows.FreshersDataSetTableAdapters.TraineeTableAdapter();
+            this.freshersDataSet1 = new TraineesManagement.windows.FreshersDataSet1();
+            this.fresherBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fresherTableAdapter = new TraineesManagement.windows.FreshersDataSet1TableAdapters.FresherTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.qualificationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mobileNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Update = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.traineesGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.traineeBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.freshersDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.traineeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.freshersDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fresherBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // traineesGrid
@@ -67,15 +71,15 @@
             this.traineesGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.traineesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.traineesGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.nameDataGridViewTextBoxColumn,
-            this.mobileNumberDataGridViewTextBoxColumn,
-            this.addressDataGridViewTextBoxColumn,
-            this.dateOfBirthDataGridViewTextBoxColumn,
-            this.qualificationDataGridViewTextBoxColumn,
+            this.idDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
             this.Delete,
             this.Update});
-            this.traineesGrid.DataSource = this.traineeBindingSource;
+            this.traineesGrid.DataSource = this.fresherBindingSource;
             this.traineesGrid.Location = new System.Drawing.Point(12, 129);
             this.traineesGrid.Name = "traineesGrid";
             this.traineesGrid.ReadOnly = true;
@@ -85,7 +89,16 @@
             this.traineesGrid.Size = new System.Drawing.Size(1104, 350);
             this.traineesGrid.TabIndex = 0;
             this.traineesGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.traineesGrid_CellContentClick);
-            this.traineesGrid.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.traineesGrid_RowPostPaint);
+            // 
+            // traineeBindingSource1
+            // 
+            this.traineeBindingSource1.DataMember = "Trainee";
+            this.traineeBindingSource1.DataSource = this.freshersDataSet;
+            // 
+            // freshersDataSet
+            // 
+            this.freshersDataSet.DataSetName = "FreshersDataSet";
+            this.freshersDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -99,19 +112,77 @@
             this.label1.Text = "Trainees List";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // traineeBindingSource
+            // traineeTableAdapter
             // 
-            this.traineeBindingSource.DataSource = typeof(Trainees_Management_System.Trainee);
+            this.traineeTableAdapter.ClearBeforeFill = true;
             // 
-            // Update
+            // freshersDataSet1
             // 
-            this.Update.HeaderText = "Update";
-            this.Update.MinimumWidth = 8;
-            this.Update.Name = "Update";
-            this.Update.ReadOnly = true;
-            this.Update.Text = "Update";
-            this.Update.UseColumnTextForButtonValue = true;
-            this.Update.Width = 150;
+            this.freshersDataSet1.DataSetName = "FreshersDataSet1";
+            this.freshersDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // fresherBindingSource
+            // 
+            this.fresherBindingSource.DataMember = "Fresher";
+            this.fresherBindingSource.DataSource = this.freshersDataSet1;
+            // 
+            // fresherTableAdapter
+            // 
+            this.fresherTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "name";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "mobile_number";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Mobile Number";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "date_of_birth";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Date of Birth";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "qualification";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Qualification";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "address";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Address";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 150;
             // 
             // Delete
             // 
@@ -123,77 +194,20 @@
             this.Delete.UseColumnTextForButtonValue = true;
             this.Delete.Width = 150;
             // 
-            // qualificationDataGridViewTextBoxColumn
+            // Update
             // 
-            this.qualificationDataGridViewTextBoxColumn.DataPropertyName = "Qualification";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.qualificationDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            this.qualificationDataGridViewTextBoxColumn.HeaderText = "Qualification";
-            this.qualificationDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.qualificationDataGridViewTextBoxColumn.Name = "qualificationDataGridViewTextBoxColumn";
-            this.qualificationDataGridViewTextBoxColumn.ReadOnly = true;
-            this.qualificationDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // dateOfBirthDataGridViewTextBoxColumn
-            // 
-            this.dateOfBirthDataGridViewTextBoxColumn.DataPropertyName = "DateOfBirth";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dateOfBirthDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dateOfBirthDataGridViewTextBoxColumn.HeaderText = "Date of Birth";
-            this.dateOfBirthDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.dateOfBirthDataGridViewTextBoxColumn.Name = "dateOfBirthDataGridViewTextBoxColumn";
-            this.dateOfBirthDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateOfBirthDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.addressDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.addressDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
-            this.addressDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // mobileNumberDataGridViewTextBoxColumn
-            // 
-            this.mobileNumberDataGridViewTextBoxColumn.DataPropertyName = "MobileNumber";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.mobileNumberDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.mobileNumberDataGridViewTextBoxColumn.HeaderText = "Mobile Number";
-            this.mobileNumberDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.mobileNumberDataGridViewTextBoxColumn.Name = "mobileNumberDataGridViewTextBoxColumn";
-            this.mobileNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            this.mobileNumberDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.nameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // Id
-            // 
-            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Id.DataPropertyName = "Id";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Id.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Id.HeaderText = "Id";
-            this.Id.MinimumWidth = 8;
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Width = 59;
+            this.Update.HeaderText = "Update";
+            this.Update.MinimumWidth = 8;
+            this.Update.Name = "Update";
+            this.Update.ReadOnly = true;
+            this.Update.Text = "Update";
+            this.Update.UseColumnTextForButtonValue = true;
+            this.Update.Width = 150;
             // 
             // TraineesListGrid
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1228, 594);
@@ -204,8 +218,13 @@
             this.Name = "TraineesListGrid";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "TraineesListGrid";
+            //this.Load += new System.EventHandler(this.TraineesListGrid_Load);
             ((System.ComponentModel.ISupportInitialize)(this.traineesGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.traineeBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.freshersDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.traineeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.freshersDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fresherBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,12 +235,23 @@
         private System.Windows.Forms.DataGridView traineesGrid;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource traineeBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mobileNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateOfBirthDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn qualificationDataGridViewTextBoxColumn;
+        private FreshersDataSet freshersDataSet;
+        private System.Windows.Forms.BindingSource traineeBindingSource1;
+        private FreshersDataSetTableAdapters.TraineeTableAdapter traineeTableAdapter;
+        private FreshersDataSet1 freshersDataSet1;
+        private System.Windows.Forms.BindingSource fresherBindingSource;
+        private FreshersDataSet1TableAdapters.FresherTableAdapter fresherTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
         private System.Windows.Forms.DataGridViewButtonColumn Update;
     }
