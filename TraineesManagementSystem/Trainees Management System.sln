@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraineesManagement.window",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraineesManagement.model", "..\TraineesManagement.model\TraineesManagement.model.csproj", "{A9DCCA10-BAB7-4220-8069-F4DA20FCDF2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraineesManagement.Data", "..\TraineesManagement.Data\TraineesManagement.Data.csproj", "{FC736D4B-AD6D-455F-8B95-1AF0711E2503}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraineesManagement.data", "..\TraineesManagement.Data\TraineesManagement.data.csproj", "{FC736D4B-AD6D-455F-8B95-1AF0711E2503}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

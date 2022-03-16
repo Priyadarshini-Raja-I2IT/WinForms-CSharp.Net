@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Windows.Forms;
 
-using TraineesManagement.Data;
+using TraineesManagement.data;
 using TraineesManagement.model;
 
 namespace TraineesManagement.windows
 {
     public partial class TraineesListGrid : Form
     {
-        TraineesDBManager traineesDBManager = new TraineesDBManager();
+        ITraineesDBManager traineesDBManager = new TraineesDBManager();
 
         public TraineesListGrid()
         {

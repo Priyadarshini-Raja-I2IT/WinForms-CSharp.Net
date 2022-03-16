@@ -4,13 +4,13 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
 using TraineesManagement.model;
-using TraineesManagement.Data;
+using TraineesManagement.data;
 
 namespace TraineesManagement.windows
 {
     public partial class TraineeForm : Form
     {
-        TraineesDBManager traineesDBManager = new TraineesDBManager();
+        ITraineesDBManager traineesDBManager = new TraineesDBManager();
         TraineesListGrid gridView = new TraineesListGrid();
 
         private bool IsEditable;
