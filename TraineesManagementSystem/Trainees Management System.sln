@@ -3,11 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraineesManagement.window", "TraineesManagement.window.csproj", "{9109825C-9DD5-4E64-989B-66B7583CD0EC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraineesManagement.model", "..\TraineesManagement.model\TraineesManagement.model.csproj", "{A9DCCA10-BAB7-4220-8069-F4DA20FCDF2F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraineesManagement.data", "..\TraineesManagement.Data\TraineesManagement.data.csproj", "{FC736D4B-AD6D-455F-8B95-1AF0711E2503}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraineesManagement.window", "TraineesManagement.window.csproj", "{9109825C-9DD5-4E64-989B-66B7583CD0EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraineesManagement.service", "TraineesManagement.service\TraineesManagement.service.csproj", "{282AB17E-45A0-4710-9328-237C7EF51E71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraineesManagement.mvc", "..\TraineesManagement.mvc\TraineesManagement.mvc.csproj", "{D3B8664D-B9F3-4AFF-A2E1-980C73E263E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraineesManagement.webAPI", "..\TraineesManagement.webAPI\TraineesManagement.webAPI.csproj", "{B3EA8534-0096-4C04-A3A4-31DAAB4726D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9109825C-9DD5-4E64-989B-66B7583CD0EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9109825C-9DD5-4E64-989B-66B7583CD0EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9109825C-9DD5-4E64-989B-66B7583CD0EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9109825C-9DD5-4E64-989B-66B7583CD0EC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A9DCCA10-BAB7-4220-8069-F4DA20FCDF2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A9DCCA10-BAB7-4220-8069-F4DA20FCDF2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9DCCA10-BAB7-4220-8069-F4DA20FCDF2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,6 +29,22 @@ Global
 		{FC736D4B-AD6D-455F-8B95-1AF0711E2503}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC736D4B-AD6D-455F-8B95-1AF0711E2503}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC736D4B-AD6D-455F-8B95-1AF0711E2503}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9109825C-9DD5-4E64-989B-66B7583CD0EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9109825C-9DD5-4E64-989B-66B7583CD0EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9109825C-9DD5-4E64-989B-66B7583CD0EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9109825C-9DD5-4E64-989B-66B7583CD0EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{282AB17E-45A0-4710-9328-237C7EF51E71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{282AB17E-45A0-4710-9328-237C7EF51E71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{282AB17E-45A0-4710-9328-237C7EF51E71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{282AB17E-45A0-4710-9328-237C7EF51E71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3B8664D-B9F3-4AFF-A2E1-980C73E263E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3B8664D-B9F3-4AFF-A2E1-980C73E263E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3B8664D-B9F3-4AFF-A2E1-980C73E263E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3B8664D-B9F3-4AFF-A2E1-980C73E263E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3EA8534-0096-4C04-A3A4-31DAAB4726D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3EA8534-0096-4C04-A3A4-31DAAB4726D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3EA8534-0096-4C04-A3A4-31DAAB4726D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3EA8534-0096-4C04-A3A4-31DAAB4726D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
